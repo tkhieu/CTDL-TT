@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="RandomArray.cpp">
+    <ClCompile Include="LinearSearch.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

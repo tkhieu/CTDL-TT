@@ -1,2 +1,4 @@
 /_ReSharper.Data Structures and Algorithms/
 /*.6.0.ReSharper.user
+/ipch/
+/Debug/

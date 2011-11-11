@@ -3,6 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Random Integer Array", "Random Integer Array\Random Integer Array.vcxproj", "{BE720AA0-2DA4-4EEA-B913-6BBD81EA2306}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Searching Algorithms", "Searching Algorithms", "{4C6C6DB7-452C-4E9C-BD7C-EA8F56642BB9}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Linear Search", "Linear Search\Linear Search.vcxproj", "{F85F2A07-409E-4C2D-AEF1-12425A284F3F}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Binary Search", "Binary Search\Binary Search.vcxproj", "{A7733366-4873-4643-9F51-1B961FFB9552}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -13,8 +19,20 @@ Global
 		{BE720AA0-2DA4-4EEA-B913-6BBD81EA2306}.Debug|Win32.Build.0 = Debug|Win32
 		{BE720AA0-2DA4-4EEA-B913-6BBD81EA2306}.Release|Win32.ActiveCfg = Release|Win32
 		{BE720AA0-2DA4-4EEA-B913-6BBD81EA2306}.Release|Win32.Build.0 = Release|Win32
+		{F85F2A07-409E-4C2D-AEF1-12425A284F3F}.Debug|Win32.ActiveCfg = Debug|Win32
+		{F85F2A07-409E-4C2D-AEF1-12425A284F3F}.Debug|Win32.Build.0 = Debug|Win32
+		{F85F2A07-409E-4C2D-AEF1-12425A284F3F}.Release|Win32.ActiveCfg = Release|Win32
+		{F85F2A07-409E-4C2D-AEF1-12425A284F3F}.Release|Win32.Build.0 = Release|Win32
+		{A7733366-4873-4643-9F51-1B961FFB9552}.Debug|Win32.ActiveCfg = Debug|Win32
+		{A7733366-4873-4643-9F51-1B961FFB9552}.Debug|Win32.Build.0 = Debug|Win32
+		{A7733366-4873-4643-9F51-1B961FFB9552}.Release|Win32.ActiveCfg = Release|Win32
+		{A7733366-4873-4643-9F51-1B961FFB9552}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F85F2A07-409E-4C2D-AEF1-12425A284F3F} = {4C6C6DB7-452C-4E9C-BD7C-EA8F56642BB9}
+		{A7733366-4873-4643-9F51-1B961FFB9552} = {4C6C6DB7-452C-4E9C-BD7C-EA8F56642BB9}
 	EndGlobalSection
 EndGlobal

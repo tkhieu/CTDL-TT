@@ -65,14 +65,16 @@ int BinarySearch(int a[], int n, int x)
 {
 	int left = 0;
 	int right = n-1;
-	int mid = (left + right)/2;
-	do{
-		if(a[mid] == x)
-		return mid;
-	if(a[mid] > x)
-		right = mid -1;
-	else
-		left=mid+1;
-	} while (left <= right);
+	int middle;
+	while(left <= right)
+	{
+		middle = (left+right)/2;
+		if(a[middle] == x)
+			return middle;
+		else if(a[middle] > x)
+			right = middle -1;
+		else if(a[middle] < x)
+			left = middle+1;
+	}
 	return -1;
 }

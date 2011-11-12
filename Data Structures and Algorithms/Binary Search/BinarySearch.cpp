@@ -8,6 +8,7 @@ void PrintArray(int a[], int n);
 void Swap(int &m, int &n);
 void SimpleSort(int a[], int n);
 int BinarySearch(int a[], int n, int x);
+int RescusiveBinarySearch(int a[],int n, int x,int left, int right);
 
 void main()
 {
@@ -20,7 +21,7 @@ void main()
 	int x;
 	printf("\nNhap x: ");
 	scanf("%d",&x);
-	int j = BinarySearch(a,n,x);
+	int j = RescusiveBinarySearch(a,n,x,0,n);
 	printf("Vi tri tim thay: %d",j);
 	getch();
 }
@@ -77,4 +78,19 @@ int BinarySearch(int a[], int n, int x)
 			left = middle+1;
 	}
 	return -1;
+}
+
+int RescusiveBinarySearch(int a[],int n, int x,int left, int right)
+{
+	
+	if(left<=right)
+	{
+		int	middle = (left+right)/2;
+		if(a[middle] == x)
+			return middle;
+		else if(a[middle] > x)
+			RescusiveBinarySearch(a,n,x,left,middle -1);
+		else if(a[middle] < x)
+			RescusiveBinarySearch(a,n,x,middle +1,right);
+	} else return -1;
 }

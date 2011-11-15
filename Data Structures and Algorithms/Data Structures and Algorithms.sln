@@ -9,6 +9,12 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Linear Search", "Linear Sea
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Binary Search", "Binary Search\Binary Search.vcxproj", "{A7733366-4873-4643-9F51-1B961FFB9552}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sorting Algorithms", "Sorting Algorithms", "{BECE7825-F387-4B34-8BA1-8BEC92EF3C93}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Insertion Sort", "InsertionSort\InsertionSort.vcxproj", "{F315B532-E594-4B2B-B2AD-7FAC21609A8C}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Binary Insertion Sort", "Binary Insertion Sort\Binary Insertion Sort.vcxproj", "{5AA2A90F-1A63-4DC9-AA77-A70B909B978E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -27,6 +33,14 @@ Global
 		{A7733366-4873-4643-9F51-1B961FFB9552}.Debug|Win32.Build.0 = Debug|Win32
 		{A7733366-4873-4643-9F51-1B961FFB9552}.Release|Win32.ActiveCfg = Release|Win32
 		{A7733366-4873-4643-9F51-1B961FFB9552}.Release|Win32.Build.0 = Release|Win32
+		{F315B532-E594-4B2B-B2AD-7FAC21609A8C}.Debug|Win32.ActiveCfg = Debug|Win32
+		{F315B532-E594-4B2B-B2AD-7FAC21609A8C}.Debug|Win32.Build.0 = Debug|Win32
+		{F315B532-E594-4B2B-B2AD-7FAC21609A8C}.Release|Win32.ActiveCfg = Release|Win32
+		{F315B532-E594-4B2B-B2AD-7FAC21609A8C}.Release|Win32.Build.0 = Release|Win32
+		{5AA2A90F-1A63-4DC9-AA77-A70B909B978E}.Debug|Win32.ActiveCfg = Debug|Win32
+		{5AA2A90F-1A63-4DC9-AA77-A70B909B978E}.Debug|Win32.Build.0 = Debug|Win32
+		{5AA2A90F-1A63-4DC9-AA77-A70B909B978E}.Release|Win32.ActiveCfg = Release|Win32
+		{5AA2A90F-1A63-4DC9-AA77-A70B909B978E}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -34,5 +48,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{F85F2A07-409E-4C2D-AEF1-12425A284F3F} = {4C6C6DB7-452C-4E9C-BD7C-EA8F56642BB9}
 		{A7733366-4873-4643-9F51-1B961FFB9552} = {4C6C6DB7-452C-4E9C-BD7C-EA8F56642BB9}
+		{5AA2A90F-1A63-4DC9-AA77-A70B909B978E} = {BECE7825-F387-4B34-8BA1-8BEC92EF3C93}
+		{F315B532-E594-4B2B-B2AD-7FAC21609A8C} = {BECE7825-F387-4B34-8BA1-8BEC92EF3C93}
 	EndGlobalSection
 EndGlobal

@@ -21,6 +21,10 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Bubble Sort", "Bubble Sort\
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Shaker Sort", "Shaker Sort\Shaker Sort.vcxproj", "{8BFADFFB-6BBD-4353-9ED8-39620B38A1F6}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sorting Algorithms NlogN", "Sorting Algorithms NlogN", "{68C9D8A7-E488-4503-B708-80948344CB7F}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Heap Sort", "Heap Sort\Heap Sort.vcxproj", "{CE52C1AB-06E8-4C07-8922-43B3D4BB04B5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -59,6 +63,10 @@ Global
 		{8BFADFFB-6BBD-4353-9ED8-39620B38A1F6}.Debug|Win32.Build.0 = Debug|Win32
 		{8BFADFFB-6BBD-4353-9ED8-39620B38A1F6}.Release|Win32.ActiveCfg = Release|Win32
 		{8BFADFFB-6BBD-4353-9ED8-39620B38A1F6}.Release|Win32.Build.0 = Release|Win32
+		{CE52C1AB-06E8-4C07-8922-43B3D4BB04B5}.Debug|Win32.ActiveCfg = Debug|Win32
+		{CE52C1AB-06E8-4C07-8922-43B3D4BB04B5}.Debug|Win32.Build.0 = Debug|Win32
+		{CE52C1AB-06E8-4C07-8922-43B3D4BB04B5}.Release|Win32.ActiveCfg = Release|Win32
+		{CE52C1AB-06E8-4C07-8922-43B3D4BB04B5}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -71,5 +79,6 @@ Global
 		{2AD6D4B6-FF91-4570-B9C5-D3EE5CA23A9A} = {BECE7825-F387-4B34-8BA1-8BEC92EF3C93}
 		{978AFE8D-2B0A-4093-AB9A-C04A38429D71} = {BECE7825-F387-4B34-8BA1-8BEC92EF3C93}
 		{8BFADFFB-6BBD-4353-9ED8-39620B38A1F6} = {BECE7825-F387-4B34-8BA1-8BEC92EF3C93}
+		{CE52C1AB-06E8-4C07-8922-43B3D4BB04B5} = {68C9D8A7-E488-4503-B708-80948344CB7F}
 	EndGlobalSection
 EndGlobal

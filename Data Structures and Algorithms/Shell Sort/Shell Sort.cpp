@@ -2,20 +2,24 @@
 #include <conio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <math.h>
 
 void RandomArray(int a[], int &n);
 void PrintArray(int a[], int n);
 void Swap(int &m, int &n);
 void SimpleSort(int a[], int n);
 void ShellSort(int a[], int n, int h[], int k);
+void GetSteps(int h[], int &k, int n);
 
 void main()
 {
 	int a[100];
 	int h[100];
-	int n,k = 1;
+	int n,k;
 	RandomArray(a,n);
 	PrintArray(a,n);
+
+	GetSteps(h,k,n);
 	ShellSort(a,n,h,k);
 	PrintArray(a,n);
 	getch();
@@ -56,6 +60,18 @@ void Swap(int &m, int &n)
 	n=temp;
 }
 
+void GetSteps(int h[], int &k, int n)
+{
+	k = (int)(log10((double)n)/log10((double)3)+0.5);
+	for (int i = k-1;i>=0;i--)
+	{
+		if (i+1 == k)
+		{
+			h[k-1] = 1;
+		}
+		h[i-1] = h[i]*3 + 1;
+	}
+}
 
 void ShellSort(int a[], int n, int h[], int k)
 {
@@ -76,4 +92,5 @@ void ShellSort(int a[], int n, int h[], int k)
 			a[j+len] = x;
 		}
 	}
+	h = (0);
 }

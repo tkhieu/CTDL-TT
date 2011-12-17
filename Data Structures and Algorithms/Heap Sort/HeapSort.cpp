@@ -2,30 +2,14 @@
 #include <conio.h>
 #include <stdlib.h>
 #include <time.h>
+int heapSize = 0;
 
-void RandomArray(int a[], int &n);
-void PrintArray(int a[], int n);
-void Swap(int &m, int &n);
 
-void Shift(int a[], int l, int r);
-void CreateHeap(int a[], int n);
-void HeapSort(int a[], int n);
-
-void main()
-{
-	int a[100];
-	int n;
-	RandomArray(a,n);
-	PrintArray(a,n);
-	HeapSort(a,n);
-	PrintArray(a,n);
-	getch();
-}
-
-void RandomArray(int a[], int &n)
+void RandomArray(int a[], int &n, int &heapSize)
 {
 	printf("Nhap n: ");
 	scanf("%d", &n);
+	heapSize = n;
 	srand(time(NULL));
 	for(int i=0;i<n;i++)
 	{
@@ -42,57 +26,69 @@ void PrintArray(int a[], int n)
 	}
 }
 
+int parent(int i) {
+	if(i==1)
+		return 0;
 
-void Swap(int &m, int &n)
-{
-	int temp = m;
-	m = n;
-	n=temp;
-}
-
-void Shift (int a[ ], int l, int r )
-{     int   x,i,j;
-		i = l; j =2*i;
-
-x = a[i];  
-while ((j<=r))
-{
-
-	if (j<r)           
-		if (a[j]<a[j+1])
-			j = j+1;
-	if (a[j]<x)return;
+	if(i%2==0)
+		return ( (i / 2)-1);
 	else
-	{     a[i] = a[j];
-	i = j;             
-	j = 2*i; 
-	a[i] = x;
+		return ( (i / 2));
+}
+
+int left(int i) {
+	return (2 * i) + 1;
+}
+
+int right(int i) {
+	return (2 * i) + 2;
+}
+
+void heapify(int a[], int i) {
+	int l = left(i), great;
+	int r = right(i);
+	if ( (a[l] > a[i]) && (l < heapSize)) {
+		great = l;
+	}
+	else {
+		great = i;
+	}
+	if ( (a[r] > a[great]) && (r < heapSize)) {
+		great = r;
+	}
+	if (great != i) {
+		int temp = a[i];
+		a[i] = a[great];
+		a[great] = temp;
+		heapify(a, great);
+	}
+}
+
+void BuildMaxHeap(int a[]) {
+	for (int i = (heapSize - 1) / 2; i >= 0; i--) {
+		heapify(a, i);
+	}
+}
+
+void HeapSort(int a[]) {
+	BuildMaxHeap(a);
+	for (int i = heapSize; i > 0; i--) {
+		int temp = a[0];
+		a[0] = a[heapSize - 1];
+		a[heapSize - 1] = temp;
+		heapSize = heapSize - 1;
+		heapify(a, 0);
 	}
 
 }
-}
 
-void CreateHeap(int a[], int n)
-{
-	int l;
-	l = n/2;
-	while(l > 0)
-	{
-		Shift(a,l,n);
-		PrintArray(a,n);
-		l--;
-	}
-}
+void main() {
 
-void HeapSort(int a[], int n)
-{
-	int r;
-	CreateHeap(a,n);
-	r = n-1;
-	while(r > 0)
-	{
-		Swap(a[0],a[r]);
-		r--;
-		Shift(a,0,r);
-	}
+	int arr[100];
+	int n;
+	RandomArray(arr,n,heapSize);
+	PrintArray(arr,n);
+	HeapSort(arr);
+	PrintArray(arr,n);
+	getch();
 }

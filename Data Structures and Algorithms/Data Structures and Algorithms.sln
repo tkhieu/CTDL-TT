@@ -29,6 +29,10 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Shell Sort", "Shell Sort\Sh
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Quick Sort", "Quick Sort\Quick Sort.vcxproj", "{D94EBFAD-50A2-4356-ABF1-945558777879}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dynamic Data Structures", "Dynamic Data Structures", "{71078568-C7A2-448A-BAF5-FAAB23F09D7B}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Link List", "Link List\Link List.vcxproj", "{DDE801F0-0E42-4390-84B6-9DB868CBE13F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -83,6 +87,10 @@ Global
 		{D94EBFAD-50A2-4356-ABF1-945558777879}.Debug|Win32.Build.0 = Debug|Win32
 		{D94EBFAD-50A2-4356-ABF1-945558777879}.Release|Win32.ActiveCfg = Release|Win32
 		{D94EBFAD-50A2-4356-ABF1-945558777879}.Release|Win32.Build.0 = Release|Win32
+		{DDE801F0-0E42-4390-84B6-9DB868CBE13F}.Debug|Win32.ActiveCfg = Debug|Win32
+		{DDE801F0-0E42-4390-84B6-9DB868CBE13F}.Debug|Win32.Build.0 = Debug|Win32
+		{DDE801F0-0E42-4390-84B6-9DB868CBE13F}.Release|Win32.ActiveCfg = Release|Win32
+		{DDE801F0-0E42-4390-84B6-9DB868CBE13F}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -99,5 +107,6 @@ Global
 		{DCFB35E2-CB33-4D7A-AA57-C2C39BF4E410} = {BECE7825-F387-4B34-8BA1-8BEC92EF3C93}
 		{9A2FFEC2-260B-464E-8CD7-0C73422F722E} = {BECE7825-F387-4B34-8BA1-8BEC92EF3C93}
 		{D94EBFAD-50A2-4356-ABF1-945558777879} = {BECE7825-F387-4B34-8BA1-8BEC92EF3C93}
+		{DDE801F0-0E42-4390-84B6-9DB868CBE13F} = {71078568-C7A2-448A-BAF5-FAAB23F09D7B}
 	EndGlobalSection
 EndGlobal

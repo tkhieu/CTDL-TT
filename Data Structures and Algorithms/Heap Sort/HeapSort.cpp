@@ -1,4 +1,4 @@
-#include <stdio.h>
+﻿#include <stdio.h>
 #include <conio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -50,9 +50,26 @@ void Swap(int &m, int &n)
 	n=temp;
 }
 
-void Shift(int a[], int l, int r)
+void Shift (int a[ ], int l, int r )
+{     int   x,i,j;
+		i = l; j =2*i;
+
+x = a[i];  
+while ((j<=r))
 {
-	
+
+	if (j<r)           
+		if (a[j]<a[j+1])
+			j = j+1;
+	if (a[j]<x)return;
+	else
+	{     a[i] = a[j];
+	i = j;             
+	j = 2*i; 
+	a[i] = x;
+	}
+
+}
 }
 
 void CreateHeap(int a[], int n)

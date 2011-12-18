@@ -2,7 +2,17 @@
 #include <conio.h>
 
 
-void HoanVi(int a, int b)
+void HoanViThamTri(int a, int b)
+{
+	int t = a; a = b; b = t;
+}
+
+void HoanViThamBien(int *a, int *b)
+{
+	int t = *a; *a = *b; *b = t;
+}
+
+void HoanViThamChieu(int &a, int &b)
 {
 	int t = a; a = b; b = t;
 }
@@ -18,14 +28,25 @@ void main()
 	printf("a = %d \nb = %d",a,b);
 
 	// Lấy giá trị từ biến con trỏ
-	printf("\n%d",*pa);
+	printf("\n*pa= %d",*pa);
 	// Lấy địa chỉ ô nhớ từ biến con trỏ
 	printf("\n%p",pa);
 	printf("\n%p",&pa);
 	printf("\n%p",&a);
 
+	// Truyền biến sử dụng tham trị
 	printf("\nHoan vi Truyen Tham Tri");
-	HoanVi(a,b);
+	HoanViThamTri(a,b);
+	printf("\na:%d b:%d",a,b);
+
+	// Truyền biến sử dụng tham số
+	printf("\nHoan vi Truyen Tham Bien su dung dia chi o nho");
+	HoanViThamBien(&a,&b);
+	printf("\na:%d b:%d",a,b);
+
+	// Truyền biến sử dụng tham Chiếu
+	printf("\nHoan vi Truyen Tham Bien su dung tham chieu");
+	HoanViThamChieu(a,b);
 	printf("\na:%d b:%d",a,b);
 
 	getch();

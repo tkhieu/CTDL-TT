@@ -49,6 +49,27 @@ void main()
 	HoanViThamChieu(a,b);
 	printf("\na:%d b:%d",a,b);
 
+	//////////////////////////////////
+	//								//
+	//			CON TRỎ MÃNG		//
+	//								//
+	//////////////////////////////////
+
+	int array[5] = {1,2,3,4,5};
+	int *parray;
+	parray = array;
+
+	 int *p1, *p2;
+	p1 = array;
+	p2 = &array[3];
+
+	// Cho khoãng cách theo số phần tử
+	printf("\nByte distance:%d",(p2 - p1)*sizeof(float));
+	printf("\nDistance:%d",(p2 - p1));
+
+	// Truy xuất đến phần tử thứ k của mãng
+	
+
 
 
 

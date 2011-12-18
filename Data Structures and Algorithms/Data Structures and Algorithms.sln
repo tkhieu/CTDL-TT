@@ -33,6 +33,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dynamic Data Structures", "
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Link List", "Link List\Link List.vcxproj", "{DDE801F0-0E42-4390-84B6-9DB868CBE13F}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Pointer Example", "Pointer Example\Pointer Example.vcxproj", "{A5E86A8D-96FE-4269-A4F6-ED708DB53EA3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -91,6 +93,10 @@ Global
 		{DDE801F0-0E42-4390-84B6-9DB868CBE13F}.Debug|Win32.Build.0 = Debug|Win32
 		{DDE801F0-0E42-4390-84B6-9DB868CBE13F}.Release|Win32.ActiveCfg = Release|Win32
 		{DDE801F0-0E42-4390-84B6-9DB868CBE13F}.Release|Win32.Build.0 = Release|Win32
+		{A5E86A8D-96FE-4269-A4F6-ED708DB53EA3}.Debug|Win32.ActiveCfg = Debug|Win32
+		{A5E86A8D-96FE-4269-A4F6-ED708DB53EA3}.Debug|Win32.Build.0 = Debug|Win32
+		{A5E86A8D-96FE-4269-A4F6-ED708DB53EA3}.Release|Win32.ActiveCfg = Release|Win32
+		{A5E86A8D-96FE-4269-A4F6-ED708DB53EA3}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

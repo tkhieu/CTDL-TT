@@ -49,5 +49,8 @@ void main()
 	HoanViThamChieu(a,b);
 	printf("\na:%d b:%d",a,b);
 
+
+
+
 	getch();
 }

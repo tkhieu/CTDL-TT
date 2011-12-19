@@ -74,3 +74,26 @@ NODE *InsertHead(LIST &l, Data d){
 	}
 	return node;
 }
+
+// 02.02: Chèn vào cuối DSLK
+void AddEnd(LIST &l, NODE *node){
+	if (l.pHead == NULL)AddFirst(l,node);
+	else
+	{
+		l.pTail->pNext = node;
+		l.pTail = node;
+	}
+}
+
+NODE *InsertTail(LIST &l, DATA d){
+	NODE *node = new NODE;
+	node->Data = d;
+	if (node == NULL) return NULL;
+	if (l.pHead == NULL) InsertHead(l,d);
+	else
+	{
+		l.pTail->pNext = node;
+		l.pTail = node;
+	}	
+	return node;
+}

@@ -72,7 +72,9 @@ NODE NodePointer(NODE *pList, int i)
 	}
 	return(p);
 }
+
 // 06. Position: Xác định vị trí thứ i của con trỏ trong danh sách
+
 // 07. PreNode: Xác định nút trước nút P trong DSLK
 // 08. Push: Thêm nút có nội dung X vào đầu DSLK
 // 09. InsAfter: Thêm một nút có nội dung X ngay sau nút P

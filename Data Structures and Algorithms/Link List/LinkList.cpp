@@ -1,4 +1,25 @@
 ﻿#include <stdio.h>
+#include <conio.h>
+
+// Định nghĩa kiểu dữ liệu chứa thông tin
+typedef struct Data{
+	string Name;
+	int	Number;
+} DATA;
+
+// Định nghĩa kiểu dữ liệu của một Node
+typedef struct Node {
+	DATA Data;
+	struct Node *pNext;
+} NODE;
+
+// Định nghĩa kiểu dữ liệu của một LinkList
+typedef struct LinkList {
+	NODE *pHead;
+	NODE *pTail;
+} LIST;
+
+
 
 void main()
 {

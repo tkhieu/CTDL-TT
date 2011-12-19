@@ -59,7 +59,19 @@ bool IsEmpty(NODE *pList)
 }
 
 // 05. NodePointer: Xác định con trỏ của nút thứ i trong danh sách
-
+NODE NodePointer(NODE *pList, int i)
+{
+	NODE p;
+	int position;
+	p = *pList;
+	position = 0;
+	while(p != NULL && position < i)
+	{
+		p = p->pNext;
+		position++;
+	}
+	return(p);
+}
 // 06. Position: Xác định vị trí thứ i của con trỏ trong danh sách
 // 07. PreNode: Xác định nút trước nút P trong DSLK
 // 08. Push: Thêm nút có nội dung X vào đầu DSLK

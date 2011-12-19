@@ -41,9 +41,25 @@ NODE GetNode()
 }
 
 // 02. FreeNode: Giải phóng vùng nhớ đã cấp trước đó
+void FreeNode(NODE p)
+{
+	free(p);
+}
+
 // 03. Initilaze: Khởi động danh sách liên kết
+void Initilaze(NODE *pList)
+{
+	*pList;
+}
+
 // 04. IsEmpty: Kiểm tra danh sách có bị rỗng không
+bool IsEmpty(NODE *pList)
+{
+	return(*pList == NULL? true:false);
+}
+
 // 05. NodePointer: Xác định con trỏ của nút thứ i trong danh sách
+
 // 06. Position: Xác định vị trí thứ i của con trỏ trong danh sách
 // 07. PreNode: Xác định nút trước nút P trong DSLK
 // 08. Push: Thêm nút có nội dung X vào đầu DSLK

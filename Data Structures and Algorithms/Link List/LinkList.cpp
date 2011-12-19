@@ -40,10 +40,33 @@ NODE *GetNode(DATA d){
 	return p;
 }
 
+void FreeNode(NODE *node){
+	free(node);
+	printf("\nFinish free node");
+}
+
 void Initalize(LIST &l){
 	//l.pHead = new NODE;
 	l.pHead = NULL;
 	l.pTail = NULL;
+}
+
+bool IsEmpty(LIST &l){
+	NODE *node = l.pHead;
+	if (node == NULL)
+	{
+		return true;
+	}
+	return false;
+}
+
+
+
+
+void SwapNode(NODE *a, NODE *b){
+	DATA temp = a->Data;
+	a->Data = b->Data;
+	b->Data = temp;
 }
 
 // 02. Insert: Chèn một dữ liệu vào DSLK
@@ -139,6 +162,52 @@ void PrintLinkList(LIST &l)
 	//printf("\n%d - %c",node->Data.Number,node->Data.Info);
 }
 
+// 04. Xóa một Node trong danh sách
+// 04.1: Xóa ở đầu danh sách
+void RemoveHead(LIST &l){
+	if (!IsEmpty(l))
+	{
+		NODE *node = l.pHead;
+		l.pHead = node->pNext;
+		FreeNode(node);
+	}else {
+		printf("\nEmpty Link List");
+	}
+}
+
+void RemoveTail(LIST &l){
+	if(!IsEmpty(l)){
+		NODE *node = l.pHead;
+		while(node->pNext != l.pTail){
+			node = node->pNext;			
+		}
+		l.pTail = node;
+		l.pTail->pNext = NULL;
+		if (node == l.pHead && node ==  l.pTail)
+		{
+			l.pHead = NULL;
+			l.pTail = NULL;
+		} else node = node->pNext;
+		FreeNode(node);
+	} else {
+		printf("\nEmpty Link List");
+	}
+}
+
+void RemoveNode(LIST &l, NODE *q){
+	NODE *node = l.pHead;
+	if (node == q)
+	{
+		RemoveHead(l);
+		return;
+	}
+	while(node->pNext != q){
+		node = node->pNext;			
+	} 
+	NODE *temp = node->pNext->pNext;
+	FreeNode(node->pNext);
+	node->pNext = temp;
+}
 
 // 03. Lấy một Node từ vị trí k
 
@@ -156,55 +225,97 @@ NODE *Search(LIST &l, Data d){
 ///////////////////////////////////////////////////////////
 
 
-void InsertElement(LIST *list){
+void InsertElement(LIST &list){
 	// Chèn phần tử đầu tiên
 	DATA d;
 	d.Info = 'A';
 	d.Number = 1;
 	NODE *node1 = GetNode(d);
-	AddFirst(*list,node1);
+	AddFirst(list,node1);
 
 	// Chèn phần tử thứ hai
 	d.Info = 'B';
 	d.Number = 2;
-	InsertHead(*list,d);
+	InsertHead(list,d);
 
 	// Chèn phần tử thứ ba
 	d.Info = 'C';
 	d.Number = 3;
 	NODE *node2 = GetNode(d);
-	AddFirst(*list,node2);
+	AddFirst(list,node2);
 
 	// Chèn phần tử thứ tư
 	d.Info = 'D';
 	d.Number = 4;
-	InsertTail(*list,d);
+	InsertTail(list,d);
 
 	// Chèn phần tử thứ năm
 	d.Info = 'C';
 	d.Number = 3;
-	NODE *node3 = Search(*list,d);
+	NODE *node3 = Search(list,d);
 	d.Info = 'E';
 	d.Number = 5;
 	NODE *node4 = GetNode(d);
-	AddAfter(*list,node3,node4);
+	AddAfter(list,node3,node4);
 
 	// Chèn phần tử thứ sáu
 	d.Info = 'C';
 	d.Number = 3;
-	NODE *node5 = Search(*list,d);
+	NODE *node5 = Search(list,d);
 	d.Info = 'F';
 	d.Number = 6;
 	NODE *node6 = GetNode(d);
-	InsertAfter(*list,node3,d);
+	InsertAfter(list,node3,d);
 }
 
-///////////////////////////////////////////////////////////
+void RemoveElement(LIST &list){
+	//RemoveHead(list);
+	//RemoveTail(list);
+	//RemoveTail(list);
+
+	Data d;
+	d.Info = 'D';
+	d.Number = 4;
+	NODE *node1 = Search(list,d);
+	RemoveNode(list,node1);
+}
+
+//////////////////////////////////////////////////////////////////////////
+// Sắp xếp tuyến tính
+void LinkListSelectionSort(LIST &list){
+	NODE *min;
+	NODE *p = list.pHead,*q;
+	while(p!=list.pTail)
+	{
+		q = p->pNext; min = p;
+		while(q != NULL)
+		{
+			if (min->Data.Number > q->Data.Number)
+			{
+				min = q;
+			}
+			if (q != list.pTail)
+			{
+				q = q->pNext;
+			} else break;
+		}
+		SwapNode(min,p);
+		if (p->pNext != NULL)
+		{
+			p = p->pNext;
+		}else break;
+	}
+
+}
+//////////////////////////////////////////////////////////////////////////
 
 void main(){
 	LIST *list = new LIST;
 	Initalize(*list);
-	InsertElement(list);
+	InsertElement(*list);
+	PrintLinkList(*list);
+	RemoveElement(*list);
+	LinkListSelectionSort(*list);
 	PrintLinkList(*list);
 	getch();
 }

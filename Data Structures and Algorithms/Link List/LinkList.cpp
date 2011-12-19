@@ -60,6 +60,15 @@ bool IsEmpty(LIST &l){
 	return false;
 }
 
+
+
+
+void SwapNode(NODE *a, NODE *b){
+	DATA temp = a->Data;
+	a->Data = b->Data;
+	b->Data = temp;
+}
+
 // 02. Insert: Chèn một dữ liệu vào DSLK
 // 02.1: AddFirst: Chèn vào đầu danh sách
 void AddFirst(LIST &l, NODE *node)
@@ -271,7 +280,34 @@ void RemoveElement(LIST &list){
 	RemoveNode(list,node1);
 }
 
-///////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////
+// Sắp xếp tuyến tính
+void LinkListSelectionSort(LIST &list){
+	NODE *min;
+	NODE *p = list.pHead,*q;
+	while(p!=list.pTail)
+	{
+		q = p->pNext; min = p;
+		while(q != NULL)
+		{
+			if (min->Data.Number > q->Data.Number)
+			{
+				min = q;
+			}
+			if (q != list.pTail)
+			{
+				q = q->pNext;
+			} else break;
+		}
+		SwapNode(min,p);
+		if (p->pNext != NULL)
+		{
+			p = p->pNext;
+		}else break;
+	}
+
+}
+//////////////////////////////////////////////////////////////////////////
 
 void main(){
 	LIST *list = new LIST;
@@ -279,6 +315,7 @@ void main(){
 	InsertElement(*list);
 	PrintLinkList(*list);
 	RemoveElement(*list);
+	LinkListSelectionSort(*list);
 	PrintLinkList(*list);
 	getch();
 }

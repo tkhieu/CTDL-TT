@@ -185,6 +185,17 @@ void RemoveTail(LIST &l){
 	}
 }
 
+void RemoveNode(LIST &l, NODE *q){
+	NODE *node = l.pHead;
+	while(node->pNext != q){
+		node = node->pNext;			
+	} 
+	NODE *temp = node->pNext->pNext;
+	FreeNode(node->pNext);
+	node->pNext = temp;
+	
+}
+
 // 03. Lấy một Node từ vị trí k
 
 NODE *Search(LIST &l, Data d){
@@ -245,9 +256,15 @@ void InsertElement(LIST &list){
 }
 
 void RemoveElement(LIST &list){
-	RemoveHead(list);
-	RemoveTail(list);
-	RemoveTail(list);
+	//RemoveHead(list);
+	//RemoveTail(list);
+	//RemoveTail(list);
+
+	Data d;
+	d.Info = 'E';
+	d.Number = 5;
+	NODE *node1 = Search(list,d);
+	RemoveNode(list,node1);
 }
 
 ///////////////////////////////////////////////////////////

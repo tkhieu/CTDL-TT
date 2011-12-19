@@ -1,5 +1,8 @@
 ﻿#include <stdio.h>
 #include <conio.h>
+#include <string>
+
+using namespace std;
 
 // Định nghĩa kiểu dữ liệu chứa thông tin
 typedef struct Data{

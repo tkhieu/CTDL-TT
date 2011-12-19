@@ -14,7 +14,7 @@ typedef struct Data{
 typedef struct Node {
 	DATA Data;
 	struct Node *pNext;
-} NODE;
+} *NODE;
 
 // Định nghĩa kiểu dữ liệu của một LinkList
 typedef struct LinkList {
@@ -33,6 +33,13 @@ void main()
 // CÁC TÁC VỤ TRÊN LINK-LIST
 //
 // 01. GetNode: Cấp phát một biến động làm nút cho DSLK
+NODE GetNode()
+{
+	NODE p;
+	p = (NODE)malloc(sizeof(struct Node));
+	return(p);
+}
+
 // 02. FreeNode: Giải phóng vùng nhớ đã cấp trước đó
 // 03. Initilaze: Khởi động danh sách liên kết
 // 04. IsEmpty: Kiểm tra danh sách có bị rỗng không

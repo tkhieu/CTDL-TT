@@ -187,13 +187,17 @@ void RemoveTail(LIST &l){
 
 void RemoveNode(LIST &l, NODE *q){
 	NODE *node = l.pHead;
+	if (node == q)
+	{
+		RemoveHead(l);
+		return;
+	}
 	while(node->pNext != q){
 		node = node->pNext;			
 	} 
 	NODE *temp = node->pNext->pNext;
 	FreeNode(node->pNext);
 	node->pNext = temp;
-	
 }
 
 // 03. Lấy một Node từ vị trí k
@@ -261,8 +265,8 @@ void RemoveElement(LIST &list){
 	//RemoveTail(list);
 
 	Data d;
-	d.Info = 'E';
-	d.Number = 5;
+	d.Info = 'D';
+	d.Number = 4;
 	NODE *node1 = Search(list,d);
 	RemoveNode(list,node1);
 }

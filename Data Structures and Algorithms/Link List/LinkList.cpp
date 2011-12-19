@@ -108,9 +108,9 @@ void AddAfter(LIST &l, NODE *q, NODE *node){
 		if (q == l.pTail)
 		{
 			l.pTail = node;
-		} else {
-			AddFirst(l,node);
 		}
+	} else {
+		AddFirst(l,node);
 	}
 }
 
@@ -138,6 +138,21 @@ void PrintLinkList(LIST &l)
 	}
 	//printf("\n%d - %c",node->Data.Number,node->Data.Info);
 }
+
+
+// 03. Lấy một Node từ vị trí k
+
+NODE *Search(LIST &l, Data d){
+	NODE *node = NULL;
+	node = l.pHead;
+	while(node != NULL){
+		if(node->Data.Info == d.Info && node->Data.Number == d.Number)
+			return node;
+		node = node->pNext;
+	}
+	return NULL;
+}
+
 ///////////////////////////////////////////////////////////
 
 
@@ -146,13 +161,42 @@ void InsertElement(LIST *list){
 	DATA d;
 	d.Info = 'A';
 	d.Number = 1;
-	NODE *node = GetNode(d);
-	AddFirst(*list,node);
+	NODE *node1 = GetNode(d);
+	AddFirst(*list,node1);
 
 	// Chèn phần tử thứ hai
 	d.Info = 'B';
 	d.Number = 2;
 	InsertHead(*list,d);
+
+	// Chèn phần tử thứ ba
+	d.Info = 'C';
+	d.Number = 3;
+	NODE *node2 = GetNode(d);
+	AddFirst(*list,node2);
+
+	// Chèn phần tử thứ tư
+	d.Info = 'D';
+	d.Number = 4;
+	InsertTail(*list,d);
+
+	// Chèn phần tử thứ năm
+	d.Info = 'C';
+	d.Number = 3;
+	NODE *node3 = Search(*list,d);
+	d.Info = 'E';
+	d.Number = 5;
+	NODE *node4 = GetNode(d);
+	AddAfter(*list,node3,node4);
+
+	// Chèn phần tử thứ sáu
+	d.Info = 'C';
+	d.Number = 3;
+	NODE *node5 = Search(*list,d);
+	d.Info = 'F';
+	d.Number = 6;
+	NODE *node6 = GetNode(d);
+	InsertAfter(*list,node3,d);
 }
 
 ///////////////////////////////////////////////////////////

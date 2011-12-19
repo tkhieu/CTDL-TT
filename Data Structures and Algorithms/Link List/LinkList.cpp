@@ -5,7 +5,7 @@
 using namespace std;
 
 struct Data {
-	string Info;
+	char Info;
 	int Number;
 };
 typedef struct Data DATA;

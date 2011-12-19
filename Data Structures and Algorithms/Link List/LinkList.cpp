@@ -40,6 +40,12 @@ NODE *GetNode(DATA d){
 	return p;
 }
 
+void Initalize(LIST &l){
+	//l.pHead = new NODE;
+	l.pHead = NULL;
+	l.pTail = NULL;
+}
+
 // 02. Insert: Chèn một dữ liệu vào DSLK
 // 02.1: AddFirst: Chèn vào đầu danh sách
 void AddFirst(LIST &l, NODE *node)
@@ -125,16 +131,17 @@ NODE *InsertAfter(LIST &l, NODE *q, DATA d){
 void PrintLinkList(LIST &l)
 {
 	NODE *node = l.pHead;
-	while(node->pNext != l.pTail)
+	while(node != NULL)
 	{
 		printf("\n%d - %c",node->Data.Number,node->Data.Info);
 		node = node->pNext;
 	}
-	printf("\n%d - %c",node->Data.Number,node->Data.Info);
+	//printf("\n%d - %c",node->Data.Number,node->Data.Info);
 }
 ///////////////////////////////////////////////////////////
-void main(){
-	LIST *list = new LIST;
+
+
+void InsertElement(LIST *list){
 	// Chèn phần tử đầu tiên
 	DATA d;
 	d.Info = 'A';
@@ -146,7 +153,14 @@ void main(){
 	d.Info = 'B';
 	d.Number = 2;
 	InsertHead(*list,d);
+}
 
+///////////////////////////////////////////////////////////
+
+void main(){
+	LIST *list = new LIST;
+	Initalize(*list);
+	InsertElement(list);
 	PrintLinkList(*list);
 	getch();
 }

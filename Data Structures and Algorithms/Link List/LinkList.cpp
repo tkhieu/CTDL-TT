@@ -22,10 +22,6 @@ struct LinkList {
 };
 typedef struct LinkList LIST;
 
-void main(){
-
-}
-
 
 // CÁC TÁC VỤ
 // 01. GetNode: Khởi tạo Node
@@ -86,8 +82,7 @@ void AddEnd(LIST &l, NODE *node){
 }
 
 NODE *InsertTail(LIST &l, DATA d){
-	NODE *node = new NODE;
-	node->Data = d;
+	NODE *node = GetNode(d);
 	if (node == NULL) return NULL;
 	if (l.pHead == NULL) InsertHead(l,d);
 	else
@@ -96,4 +91,62 @@ NODE *InsertTail(LIST &l, DATA d){
 		l.pTail = node;
 	}	
 	return node;
+}
+
+// 02.03: Chèn vào giữa danh sách
+void AddAfter(LIST &l, NODE *q, NODE *node){
+	if (q !=NULL)
+	{
+		node->pNext = q->pNext;
+		q->pNext = node;
+		if (q == l.pTail)
+		{
+			l.pTail = node;
+		} else {
+			AddFirst(l,node);
+		}
+	}
+}
+
+NODE *InsertAfter(LIST &l, NODE *q, DATA d){
+	NODE *node = GetNode(d);
+	if (node == NULL) return NULL;
+	if (q != NULL)
+	{
+		node->pNext = q->pNext;
+		q->pNext = node;
+		if (q == l.pTail)
+		{
+			l.pTail = node;
+		}
+	} else InsertHead(l,d);
+}
+
+void PrintLinkList(LIST &l)
+{
+	NODE *node = l.pHead;
+	while(node->pNext != l.pTail)
+	{
+		printf("\n%d - %c",node->Data.Number,node->Data.Info);
+		node = node->pNext;
+	}
+	printf("\n%d - %c",node->Data.Number,node->Data.Info);
+}
+///////////////////////////////////////////////////////////
+void main(){
+	LIST *list = new LIST;
+	// Chèn phần tử đầu tiên
+	DATA d;
+	d.Info = 'A';
+	d.Number = 1;
+	NODE *node = GetNode(d);
+	AddFirst(*list,node);
+
+	// Chèn phần tử thứ hai
+	d.Info = 'B';
+	d.Number = 2;
+	InsertHead(*list,d);
+
+	PrintLinkList(*list);
+	getch();
 }
